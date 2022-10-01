@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor monetario</title>
+
+    <style>
+        .dark-mode {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e1d1d;
+            font-family: monospace;
+        }
+
+        h1, button, p {
+            color: #1dd01d;
+            font-weight: bold;
+        }
+
+         button {
+            background-color: #1e1d1d;
+            padding: 10px;
+            border: 1px solid #23ec23;
+            cursor: pointer;
+            
+        }
+
+
+        .normal-mode {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: monospace;
+        } 
+
+        .normal-mode h1 {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .normal-mode p {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .normal-mode  button {
+            background-color: blue;
+            padding: 10px;
+            border: 1px solid #0000;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 5px;    
+        }
+
+
+        .normal-mode .mudarAparencia {
+            margin-top: 60px;
+            background-color: #000;
+        }
+
+        .dark-mode .mudarAparencia {
+            margin-top: 60px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="normal-mode">
+
+    
+        <h1 class="titulo">Conversor de R$ ----> US$</h1>
+
+        <button class="converter">Converter</button>
+
+        <p class="paragrafo">Clique no botão acima para iniciar.</p>
+    
+
+    <button class="mudarAparencia">Modo Dark</button>
+    <script>
+        var valorDolarAtual = prompt('Antes de mais nada.Quanto está a cotação do dólar agora?');
+
+        document.querySelector('.converter').addEventListener('click', ()=> {
+            var real = prompt('Quantos R$ você tem na carteira?');
+
+            var converter = real / valorDolarAtual;
+            var resultadoFinal = converter.toFixed(2);
+
+            alert(`Você pode comprar ${resultadoFinal} US$`);
+        });
+
+        document.querySelector('.mudarAparencia').addEventListener('click', ()=> {
+            var body = document.querySelector('body');
+            var button = document.querySelector('.mudarAparencia');
+            if (body.className === 'normal-mode') {
+                
+                body.classList.remove('normal-mode');
+                body.classList.add('dark-mode');
+
+                button.textContent = 'Modo Normal';
+
+            } else if (body.className === 'dark-mode') {
+                body.classList.remove('dark-mode');
+                body.classList.add('normal-mode');
+
+                button.textContent = 'Modo Dark';
+            }
+        })
+    </script>
+</body>
+</html>

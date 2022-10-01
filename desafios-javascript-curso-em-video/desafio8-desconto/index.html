@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto</title>
+</head>
+<body>
+
+    <h1>Calcular Desconto</h1>
+    <button>Desconto de 10%</button>
+
+    <h2></h2>
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+    <script>
+        document.querySelector('button').addEventListener('click', ()=> {
+            var nomeProduto = prompt('Qual é o produto que você esta comprando?');
+
+            var precoDoProduto = prompt('Qual é o preço do ' + nomeProduto + '?');
+            var h2 = document.querySelector('h2');
+            var p = document.querySelectorAll('p');
+            var calcularPorcetagem = (10 * precoDoProduto) / 100;
+            var resultado = calcularPorcetagem.toFixed(2);
+            var precoFinal = (precoDoProduto - resultado).toFixed(3);
+
+            h2.innerHTML = 'Calculando desconto de 10% para ' + nomeProduto;
+            p[0].innerHTML = 'O preço original era R$ ' + precoDoProduto + '.';
+            p[1].innerHTML = 'Você acaba de ganhar R$ ' + resultado + ' de desconto (-10%).';
+            p[2].innerHTML = 'No fim, você vai pagar R$ ' + precoFinal + ' no produto ' + nomeProduto + '.';
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body {
+    background-color: blue;
+}
+
+table {
+    height: 250px;
+    width: 200px;
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+table tr {
+    display: flex;
+}
+
+table tr th {
+    font-size: 20px;
+}
