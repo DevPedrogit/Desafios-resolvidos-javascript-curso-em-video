@@ -20,10 +20,11 @@
     <script>
         document.querySelector('button').addEventListener('click', ()=> {
             var nomeProduto = prompt('Qual é o produto que você esta comprando?');
-
             var precoDoProduto = prompt('Qual é o preço do ' + nomeProduto + '?');
+            
             var h2 = document.querySelector('h2');
             var p = document.querySelectorAll('p');
+            
             var calcularPorcetagem = (10 * precoDoProduto) / 100;
             var resultado = calcularPorcetagem.toFixed(2);
             var precoFinal = (precoDoProduto - resultado).toFixed(3);
