@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolvendo baskhara</title>
+</head>
+<body>
+
+    <div class="conteudo">
+        <h1>Resolvendo Baskhara</h1>
+        <button>Calcular</button>
+
+        <h2></h2>
+
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    
+    <script>
+        let btn = document.querySelector('button');
+        let h2 = document.querySelector('h2');
+        let p = document.querySelectorAll('p');
+
+        const calcularBaskhara = ()=> {
+            let valorA = prompt('Digite o valor de A...');
+            let valorB = prompt('Digite o valor de B...');
+            let valorC = prompt('Agora digite o valor de C...');
+
+            let calc = (valorB ** 2 - (4 * valorA * valorC));
+
+            h2.innerHTML = 'Resolvendo Bhaskara'
+            p[0].innerHTML = `A equação atual é ${valorA}x² + ${valorB}x + ${valorC} = 0`;
+            p[1].innerHTML = `O cálculo realizado será Δ = ${valorB}² - 4 . ${valorA} . ${valorC}`; 
+            p[2].innerHTML = `o valor calculado foi Δ = ${calc}`
+        }
+        btn.addEventListener('click', calcularBaskhara);
+    </script>
+</body>
+</html>
+
