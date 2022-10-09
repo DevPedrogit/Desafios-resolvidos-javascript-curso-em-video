@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salarial</title>
+</head>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <button style="cursor: pointer;" id="btn">Reajustar Salario</button>
+
+    <h2></h2>
+
+    <p>Clique no botão acima para iniciar.</p>
+    <p></p>
+    <p></p>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', ()=> {
+            var nomeFuncionario = prompt('Qual é o nome do funcionario?');
+            var salarioAtual = prompt('Qual é o salario de ' + nomeFuncionario + '?');
+            var porcentagem = prompt('O salario de ' + nomeFuncionario + ' vai ser reajustado em qual porcentagem?');
+
+            var reajuste = (salarioAtual * (1 + (porcentagem / 100))).toFixed(2);
+            var novoSalario = reajuste
+            var calcularAumento = Number(novoSalario - salarioAtual).toFixed(2);
+            var p = document.querySelectorAll('p');
+
+            p[0].innerHTML = `O salário atual era ${salarioAtual}.`;
+            p[1].innerHTML = `Com um aumento de ${porcentagem}%, o salário vai aumentar R$ ${calcularAumento} no próximo mês.`;
+            p[2].innerHTML = `E a partir dai, ${nomeFuncionario} vai passar a ganhar R$ ${novoSalario}.`
+        })
+    </script>
+</body>
+</html>
